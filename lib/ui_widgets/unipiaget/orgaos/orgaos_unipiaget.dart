@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class OrgUnipiaget extends StatefulWidget {
   const OrgUnipiaget({super.key});
 
@@ -12,10 +13,10 @@ class _OrgUnipiagetState extends State<OrgUnipiaget> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: const Text("Universidade Jean Piaget", style: TextStyle(
-            color: Colors.black,
-            fontSize: 16
-        ),),
+        title: const Text(
+          "Universidade Jean Piaget",
+          style: TextStyle(color: Colors.black, fontSize: 16),
+        ),
         elevation: 0,
         actions: [
           Padding(
@@ -23,158 +24,88 @@ class _OrgUnipiagetState extends State<OrgUnipiaget> {
             child: CircleAvatar(
               child: Image.asset("assets/images/logo.png"),
             ),
-
           )
         ],
       ),
-      body: Column(
-        children: <Widget>[
 
-          ListTile(
-            onTap: (){
-              //Navigator.push(context, MaterialPageRoute(builder: (context)=> const Reitor()));
-            },
-            //leading: const Icon(Icons.call,color: Colors.black,),
-            //trailing: const Icon(Icons.arrow_right,color: Colors.black,),
-
-            leading: Image.asset("assets/images/reitor.png"),
-            title: const Text('Samuel Carlos Victorino',
-              style: TextStyle(      color: Colors.black),
-
-            ),
-
-          ),
-          ListTile(
-            onTap: (){
-             // Navigator.push(context, MaterialPageRoute(builder: (context)=> const Ident()));
-            },
-            //leading: const Icon(Icons.call,color: Colors.black,),
-            trailing: const Icon(Icons.arrow_right,color: Colors.black,),
-            title: const Text('Identidade e Missão',
-              style: TextStyle(
-                  color: Colors.black),
-            ),
-          ),
-          ListTile(
-            onTap: (){
-             // Navigator.push(context, MaterialPageRoute(builder: (context)=> const Campus()));
-            },
-            //leading: const Icon(Icons.call,color: Colors.black,),
-            trailing: const Icon(Icons.arrow_right,color: Colors.black,),
-            title: const Text('Campus UniPiaget Viana',
-              style: TextStyle(
-                  color: Colors.black),
-            ),
-          ),
-          ListTile(
-            onTap: (){
-              //Navigator.push(context, MaterialPageRoute(builder: (context)=> const Parcerias()));
-            },
-            //leading: const Icon(Icons.call,color: Colors.black,),
-            trailing: const Icon(Icons.arrow_right,color: Colors.black,),
-            title: const Text('Parcerias',
-              style: TextStyle(
-                  color: Colors.black),
-            ),
-          ),
-
-        ],
-      ),
-
-    );
-  }
-}
-
-class ParagraphsWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-
-          Subtitle(
-            text: 'Saudação do Magnífico Reitor',
-          ),
-          Paragraph(
-              title: 'Por Samuel Carlos Victorino\n\n',
-              text:
-              'É com bastante alegria e sentido de elevada responsabilidade que me dirijo à comunidade académica da UniPiaget, cumprimentando todos e todas calorosamente.'
-          ),
-
-          Paragraph(
-              title: '',
-              text:
-              'Tomei posse como Reitor da UniPiaget no dia 07 de Março do corrente ano, 2019, e propus-me trabalhar, arduamente, para realizar os grandes objectivos da Instituição. Para esta árdua, mas nobre, tarefa conto com o apoio de toda a comunidade académica (Docentes, Estudantes, trabalhadores administrativos) dos colegas do colégio Reitoral (os vice Reitores) bem como dos Decanos, Vice-decanos, Coordenadores de curso e do apoio e suporte da AIPA, entidade promotora.'
-          ),
-
-          Paragraph(
-              title: '',
-              text:
-              'O grande objectivo de desenvolvimento da UniPiaget resume-se em garantir uma formação de elevada qualidade para os nossos estudantes por via da articulação das três dimensões basilares da missão de uma Instituição de Ensino Superior, isto é, o Ensino, a Investigação Científica e a Extensão Universitária.' ),
-          Paragraph(
-              title: '',
-              text:
-              'Já que todos somos capazes de participar na construção de uma sociedade educada e informada, surge, aqui, mais uma oportunidade para demonstrarmos que o conhecimento de cada indivíduo vale para alguma coisa. Assim, o Site conta com o empenho de vários profissionais, filhos da UniPiaget e colaboradores, com a finalidade de dignificar e honrar a missão pela qual a instituição foi criada.'
-          ),
-          Paragraph(
-            title: '',
-            text:
-            'Bem-haja, a todos.\n\n',
-          ),
-          // Adicione mais parágrafos conforme necessário
-        ],
-      ),
-    );
-  }
-}
-
-class Paragraph extends StatelessWidget {
-  final String title;
-  final String text;
-
-  Paragraph({required this.title, required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 16.0),
-      child: RichText(
-        text: TextSpan(
-          style: DefaultTextStyle.of(context).style,
+      body: SafeArea(
+        child: Column(
           children: [
-            TextSpan(
-              text: '$title ',
-              style: TextStyle(fontWeight: FontWeight.bold),
+            Container(
+              padding: EdgeInsets.all(16.0),
+              color: Colors.amber[600],
+              margin: const EdgeInsets.fromLTRB(190.0, 10.0, 0.0, 10.0),
+              width: 160.0,
+              height: 400.0,
+
+
             ),
-            TextSpan(
-              text: text,
-            ),
+      /*Container(
+
+        margin: const EdgeInsets.fromLTRB(190.0, 25.0, 0.0, 10.0),
+        child: Text('Vida do reitor',),
+
+        color: Colors.amber[600],
+        //alignment: Alignment.centerRight,
+        padding: EdgeInsets.all(10.0),
+        width: 160.0,
+        height: 400.0,
+
+
+        ),*/
+     Container(
+       color: Colors.cyan,
+       child: Row(
+
+
+       ),
+     ),
+
           ],
         ),
-        textAlign: TextAlign.justify,
       ),
+
+
     );
   }
 }
+/*
+ );
 
-class Subtitle extends StatelessWidget {
-  final String text;
+    ),
 
-  Subtitle({required this.text});
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
-      child: Text(
-        text,
-        style: const TextStyle(
-          fontSize: 18.0,
-          fontWeight: FontWeight.bold,
-          color: Colors.black, // Cor do subtítulo
-        ),
-      ),
-    );
-  }
-}
+
+/*
+       body: Column(
+        children: <Widget>[
+
+             SafeArea(
+               child: Container(
+                margin: const EdgeInsets.fromLTRB(190.0, 25.0, 0.0, 10.0),
+                child: Text('Vida do reitor',),
+
+                color: Colors.amber[600],
+                //alignment: Alignment.centerRight,
+                padding: EdgeInsets.all(10.0),
+                width: 160.0,
+                height: 400.0,
+                 Text(
+                   'Parágrafo 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                   style: TextStyle(fontSize: 16.0),
+                 ),
+                 SizedBox(height: 8.0), // Adiciona um espaço entre os parágrafos
+                 Text(
+                   'Parágrafo 2: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                   style: TextStyle(fontSize: 16.0),
+                 ),
+                 SizedBox(height: 8.0), // Adiciona um espaço entre os parágrafos
+                 Text(
+                   'Parágrafo 3: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                   style: TextStyle(fontSize: 16.0),
+                 ),
+                           ),
+             ),
+
+         */
+ */

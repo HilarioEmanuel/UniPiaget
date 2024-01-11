@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:unipiaget/ui_widgets/unipiaget/parcerias.dart';
-import 'package:unipiaget/ui_widgets/unipiaget/reitoria.dart';
+import 'package:unipiaget/ui_widgets/unipiaget/identidade/patrono.dart';
+import 'package:unipiaget/ui_widgets/unipiaget/saudacao/saudacao.dart';
 
-import 'campus.dart';
-import 'reitoria.dart';
-import 'identidade/identidde.dart';
+import 'historial.dart';
+import 'missao.dart';
 
-class Unipiaget extends StatelessWidget {
-  const Unipiaget({super.key});
+
+class Identidde extends StatelessWidget {
+  const Identidde({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,44 +33,33 @@ class Unipiaget extends StatelessWidget {
         children: <Widget>[
           ListTile(
             onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=> const Reitor()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> const Historial()));
             },
             //leading: const Icon(Icons.call,color: Colors.black,),
             trailing: const Icon(Icons.arrow_right,color: Colors.black,),
-            title: const Text('Reitoria',
+            title: const Text('Historial',
               style: TextStyle(
                   color: Colors.black),
             ),
           ),
           ListTile(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> const Identidde()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> const Missao()));
             },
             //leading: const Icon(Icons.call,color: Colors.black,),
             trailing: const Icon(Icons.arrow_right,color: Colors.black,),
-            title: const Text('Identidade e Missão',
+            title: const Text('Missão, Visão e Valores',
               style: TextStyle(
                   color: Colors.black),
             ),
           ),
           ListTile(
             onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=> const Campus()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> const Patrono()));
             },
             //leading: const Icon(Icons.call,color: Colors.black,),
             trailing: const Icon(Icons.arrow_right,color: Colors.black,),
-            title: const Text('Campus UniPiaget Viana',
-              style: TextStyle(
-                  color: Colors.black),
-            ),
-          ),
-          ListTile(
-            onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=> const Parcerias()));
-            },
-            //leading: const Icon(Icons.call,color: Colors.black,),
-            trailing: const Icon(Icons.arrow_right,color: Colors.black,),
-            title: const Text('Parcerias',
+            title: const Text('Patrono',
               style: TextStyle(
                   color: Colors.black),
             ),
@@ -78,9 +67,6 @@ class Unipiaget extends StatelessWidget {
 
         ],
       ),
-
-
     );
+  }
 }
-}
-
