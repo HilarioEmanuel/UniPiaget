@@ -43,6 +43,7 @@ class ParagraphsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
 
@@ -59,23 +60,24 @@ class ParagraphsWidget extends StatelessWidget {
 
           Paragraph(
               title: '',
+
               text:'A missão, os valores e a visão desta casa de saber encontram o seu fundamento nos postulados do seu patrono, Jean Piaget, que defendia os métodos que encorajem o homem a desenvolver as suas habilidades. Para Piaget, o interesse naquilo que se faz é um ingrediente para se atingirem maiores patamares'
                  ),
 
+          buildBoldParagraph('Quando alguém se interessa pelo que faz, é capaz de empreender esforços até ao limite da sua resistência  (Jean Piaget, 1896-1980)'
+
+          ),
           Paragraph(
               title: '',
               text:
               'Para o pedagogo suíço, a tábua rasa não existe; todo o ser humano é capaz de construir um conhecimento e uma habilidade, o que nos leva a considerar as seguintes visões:'),
-
           Paragraph(
               title: '',
-              text:'1. Mais que simples teorias psicanalíticas, o cerne da visão de Jean Piaget centra-se no reconhecimento das capacidades que cada ser humano possui para transformar a humanidade num lugar bom para viver;'  ),
+              text:'1. Mais que simples teorias psicanalíticas, o cerne da visão de Jean Piaget centra-se no reconhecimento das capacidades que cada ser humano possui para transformar a humanidade num lugar bom para viver;'),
 
           Paragraph(
               title: '',
               text:'2. Quem não é capaz de trabalhar em equipa, não é capaz de produzir bons frutos para o bem da colectividade; aquele que não produz - o preguiçoso, cria dois suicídios: a si mesmo e à instituição em que estiver vinculado.' ),
-
-
           Paragraph(
               title: '',
               text:'Portanto, a comunidade académica piagetiana é convidada a produzir e a criar valores que edifiquem e perpetuem o legado daquele que deu o nome à instituição.'),
@@ -134,5 +136,29 @@ class Subtitle extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget buildParagraph(String text) {
+
+  return Padding(
+    padding: const EdgeInsets.all(6.0),
+    child: Text(text),
+    
+
+  );
+}
+
+Widget buildBoldParagraph(String text) {
+  return Padding(
+    padding: const EdgeInsets.all(6.0),
+    child: RichText(
+
+      text: TextSpan(
+        text: text,
+        style: const TextStyle(fontWeight: FontWeight.w900),
+
+      ),
+    ),
+  );
 }
 

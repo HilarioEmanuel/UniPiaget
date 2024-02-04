@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> imageSliders = imgList.map((item) => Container(
-      child: ClipRRect(
+        child: ClipRRect(
         borderRadius: const BorderRadius.all(
           Radius.circular(5.0),
         ),
@@ -175,6 +175,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   final List<Dashboard> dashboard = [
+
+
     Dashboard(
         image: "assets/menus/perdidos.jpg",
         tittle: "Perdidos e achados",
@@ -208,32 +210,39 @@ class _HomePageState extends State<HomePage> {
   ];
 
   dashboardList(int index){
+
     return GestureDetector(
       onTap: (){
           Navigator.push(context,
               MaterialPageRoute(builder: (context)=>
                   Faculdades(dashboard: dashboard[index])));
       },
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 20,
-          ),
-          SizedBox(
-              height: 70,
-              child: Image.asset(dashboard[index].image)),
-          const SizedBox(
-            height: 10,
-          ),
-          Text(dashboard[index].tittle,style: const TextStyle(
-              fontWeight: FontWeight.bold
-          ),),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+                height: 70,
+                child: Image.asset(dashboard[index].image)),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(dashboard[index].tittle,style: const TextStyle(
+                fontWeight: FontWeight.bold
+            ),),
 
-          Text(dashboard[index].subTittle,style: const TextStyle(
-              fontWeight: FontWeight.normal
-          ),),
-        ],
+            Text(dashboard[index].subTittle,style: const TextStyle(
+                fontWeight: FontWeight.normal
+            ),
+            ),
+
+          ],
+
+        ),
       ),
+
     );
   }
 }
